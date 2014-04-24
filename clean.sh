@@ -1,0 +1,1 @@
+jq '{ id: .track_id, title: .title, artist: .artist, timestamp: .timestamp , similars: .similars|map({id: .[0], score: .[1] }), tags: .tags|map({id: .[0], score: .[1] }) }' src/main/resources/merged.json -c > src/main/resources/clean.json
